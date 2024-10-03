@@ -15,7 +15,7 @@ export default function Home() {
   const click = () => {
     router.push('/login');
   }
-
+/*
   if(user){
     return (
       <div className={styles.page}>
@@ -44,10 +44,13 @@ export default function Home() {
       </div>
     );
   }
-
+*/
   return(
     <div className={styles.page}>
-      
+      <h1 className={styles.title}>Home</h1>
+        <div className={styles.main}>
+          <button onClick={click} className={styles.botao}>Login</button>
+        </div>
     </div>
 
   )

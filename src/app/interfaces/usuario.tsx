@@ -1,7 +1,10 @@
 interface Usuario {
+    id: number;
     nome: string;
-    idade: number;
-    email?: string;
+    email: string;
+    password: string;
+    tipo: string;
+
 }
 
 /*

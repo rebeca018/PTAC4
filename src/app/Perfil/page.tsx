@@ -1,15 +1,16 @@
-import PerfilUsuario from "../interfaces/usuario";
+'use client'
+import { useState } from "react";
+
 import Usuario from "../interfaces/usuario";
+
+
 const PaginaPerfil = () => {
-    const usuario = {
-        nome: 'José Lima',
-        idade: 20,
-        email: 'joselima@gmail.com'
-    }
+    const [usuario, setUsuario] = useState<Usuario>(); 
+
 
     return(
         <div>
-            <PerfilUsuario usuario = {usuario}/>
+            <h1>Página Perfil</h1>
         </div>
     )
 }
