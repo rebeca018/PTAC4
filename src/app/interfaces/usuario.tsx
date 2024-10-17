@@ -1,9 +1,9 @@
 interface Usuario {
-    id: number;
-    nome: string;
+    id?: number;
+    name: string;
     email: string;
     password: string;
-    tipo: string;
+    tipo?: "cliente" | "admin";
 
 }
 

@@ -19,6 +19,10 @@ export default function Login() {
     }
   }
 
+  const click = () => {
+    router.push('/cadastro');
+  }
+
   return(
   <div className={styles.container}>
       <div className={styles.login}>
@@ -26,6 +30,7 @@ export default function Login() {
         <input className={styles.input} type="text" value={user} placeholder="Nome de usuário" onChange={(e) => setUser(e.target.value)}/>
         <input className={styles.input} type="text" value={senha} placeholder="Senha" onChange={(e) => setSenha(e.target.value)}/>
         <button className={styles.botao} onClick={autenticar}>Login</button>
+        <button className={styles.botao} onClick={click}>Cadastre-se</button>
 
         {erroLogin && (
         <div className={styles.autenticar}>
