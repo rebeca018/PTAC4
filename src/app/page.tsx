@@ -1,9 +1,12 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
+
+import Button from "./componentes/button";
+import MyInput from "./componentes/myinput";
+import Header from "./componentes/header";
+
 import { useState } from "react";
-import Button from "./componentes/button"
-import MyInput from "./componentes/myinput"
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -46,11 +49,16 @@ export default function Home() {
   }
 */
   return(
-    <div className={styles.page}>
-      <h1 className={styles.title}>Home</h1>
-        <div className={styles.main}>
-          <button onClick={click} className={styles.botao}>Login</button>
-        </div>
+    <div >
+      <Header />
+
+      <div className={styles.page}>
+        <h1 className={styles.title}>Home</h1>
+
+          <div className={styles.main}>
+            <button onClick={click} className={styles.botao}>Login</button>
+          </div>
+      </div>
     </div>
 
   )
