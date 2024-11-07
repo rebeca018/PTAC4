@@ -6,4 +6,23 @@
   align-items: center;
   flex-direction: column; /* Para alinhar o título e outros elementos em coluna */
   min-height: 100vh; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao {
+  background-color: #4B2E6D;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  width: 100%;
+}
+    
+.botao:hover {
+  background-color: #6A4E8E ;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
 }
