@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Header from "../componentes/header";
+import Footer from "../componentes/footer";
 
 export default function Login() {
   const [user, setUser] = useState("");
@@ -44,6 +45,7 @@ export default function Login() {
         )}
         </div>
     </div>
+    <Footer/>
   </div>
   );
 

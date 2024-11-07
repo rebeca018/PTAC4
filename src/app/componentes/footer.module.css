@@ -1,0 +1,32 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 10px 20px;             
+    background-color: #4B2E6D;      
+    border-top: 1px solid #ccc;   
+    height: 60px;  
+}
+
+.footer div {
+    flex: 1;                        
+}
+
+.footer div p {
+    margin: 0;                      
+    font-size: 16px;                
+    color: #fff;                   
+}
+
+.e {
+    display: flex;
+}
+
+.d {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-end;
+}

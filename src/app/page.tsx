@@ -1,10 +1,8 @@
 'use client'
-import Image from "next/image";
 import styles from "./page.module.css";
 
-import Button from "./componentes/button";
-import MyInput from "./componentes/myinput";
 import Header from "./componentes/header";
+import Footer from "./componentes/footer";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -59,6 +57,7 @@ export default function Home() {
             <button onClick={click} className={styles.botao}>Login</button>
           </div>
       </div>
+      <Footer/>
     </div>
 
   )

@@ -33,6 +33,7 @@
     margin-left: auto;
 }
 
+/*
 .nav p {
     margin: 0 15px; 
     font-size: 16px; 
@@ -42,9 +43,9 @@
 }
 
 .nav p:hover {
-    color: #007bff; 
+    color: #869fdf; 
 }
-
+*/
 .botao {
     background-color: #2b1643;
     color: white;
@@ -63,3 +64,21 @@
     box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
 }
 
+.botaoH {
+    background-color: #4B2E6D;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    width: 100%;
+}
+      
+.botaoH:hover {
+    background-color: #4B2E6D ;
+    box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+    color: #869fdf;
+}

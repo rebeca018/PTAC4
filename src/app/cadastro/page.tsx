@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Header from "../componentes/header";
+import Footer from "../componentes/footer";
 // Importando interface do usuário
 import Usuario from "../interfaces/usuario";
 
@@ -57,13 +58,19 @@ export default function Cadastro() {
     <div className={styles.container}>
         <div className={styles.login}>
           <h1>Cadastro</h1>
+          <p className={styles.p}>Nome de usuário:</p>
           <input className={styles.input} type="text" value={usuario.name} placeholder="Nome de usuário" onChange={(e) => autualizeNome(e.target.value)}/>
+
+          <p className={styles.p}>Email:</p>
           <input className={styles.input} type="text" value={usuario.email} placeholder="Email" onChange={(e) => autualizeEmail(e.target.value)}/>
+          
+          <p className={styles.p}>Senha:</p>
           <input className={styles.input} type="text" value={usuario.password} placeholder="Senha" onChange={(e) => autualizePassword(e.target.value)}/>
           <button className={styles.botao} onClick={click}>Cadastre-se</button>
 
         </div>
     </div>
+    <Footer/>
   </div>
 
   );
