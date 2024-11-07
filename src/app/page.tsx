@@ -4,18 +4,41 @@ import styles from "./page.module.css";
 import Header from "./componentes/header";
 import Footer from "./componentes/footer";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { parseCookies } from "nookies";
 
 export default function Home() {
-  const [user, setUser] = useState(true);
-  const [input, setInput] = useState("");
-
   const router = useRouter();
 
   const click = () => {
     router.push('/login');
   }
+
+  useEffect(() => {
+    const {'restaurant-token' : token} = parseCookies()
+    if(!token){
+      router.push("/")
+    }
+    console.log(token)
+  }, [])
+  return(
+    <div >
+      <Header/>
+
+      <div className={styles.page}>
+        <h1 className={styles.title}>Home</h1>
+
+          <div className={styles.main}>
+            <button onClick={click} className={styles.botao}>Login</button>
+          </div>
+      </div>
+      <Footer/>
+    </div>
+
+  )
+}
+
 /*
   if(user){
     return (
@@ -46,19 +69,3 @@ export default function Home() {
     );
   }
 */
-  return(
-    <div >
-      <Header/>
-
-      <div className={styles.page}>
-        <h1 className={styles.title}>Home</h1>
-
-          <div className={styles.main}>
-            <button onClick={click} className={styles.botao}>Login</button>
-          </div>
-      </div>
-      <Footer/>
-    </div>
-
-  )
-}
