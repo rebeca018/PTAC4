@@ -89,6 +89,24 @@
         background-color: #6A4E8E ;
         box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
       }
+      .botaoC {
+        background-color: #FFF;
+        color: #4B2E6D;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-top: 15px;
+        width: 100%;
+    }
+          
+    .botaoC:hover {
+        background-color: #FFF ;
+        box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+        color: #869fdf;
+    }
           
       .autenticar {
         background-color: #D4C1D4 ;

@@ -22,6 +22,7 @@ export default function Home() {
     }
     console.log(token)
   }, [])
+  
   return(
     <div >
       <Header/>

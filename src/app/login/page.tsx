@@ -55,7 +55,7 @@ export default function Login() {
           setCookie(undefined, 'restaurant-token', token, {
             maxAge: 60*60*1 // 1 hora
           } )
-
+          router.push("/")
         }
       } else {
 
@@ -65,7 +65,7 @@ export default function Login() {
     }
     
     console.log('Email', email);
-    console.log('Password', password);
+    //console.log('Password', password);
   }
 
   const click = () => {
@@ -80,13 +80,15 @@ export default function Login() {
           <form onSubmit={handleSubmit}>
           <h1>Login</h1>
           <input className={styles.input} type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-          <input className={styles.input} type="text" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-          <button className={styles.botao}>Login</button>
-          <button className={styles.botao} onClick={click}>Cadastre-se</button>
+          <input className={styles.input} type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+          <button className={styles.botao} type="submit">Login</button>
+          <button onClick={click} className={styles.botaoC}>Cadastre-se aqui</button>
+          
+          
             {erroLogin && (
               <div className={styles.autenticar}>
                 <h2>Não foi possível realizar o Login</h2>
-                <p>Usuário ou Senha inválidos</p>
+                <p>{erroLogin}</p>
               </div>
             )}
           </form>

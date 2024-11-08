@@ -1,54 +1,67 @@
 'use client'
 
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Header from "../componentes/header";
 import Footer from "../componentes/footer";
 // Importando interface do usuário
 import Usuario from "../interfaces/usuario";
 
+import { ApiURL } from "../config";
+import { setCookie } from "nookies";
+
+interface ResponseSignin {
+  erro: boolean,
+  mensagem: string,
+  token?: string
+}
+
 export default function Cadastro() {
     // const do usuário, com os atributos da interface
-  const [usuario, setUsuario] = useState<Usuario>({name: ' ', email: ' ', password: ' ', tipo: 'cliente'});
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [erroLogin, setErroLogin] = useState("");
   const router = useRouter();
   
-  const click = () => {
-    router.push('/login');
-  }
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
 
-    // Função para atualizar o nome
-  const autualizeNome = (novoNome : string) =>{
-    console.log(usuario)
-    setUsuario(
-        (prevUsuario) => ({
-        ...prevUsuario,
-        name: novoNome
-        })
-    )
-  }
+    try{
+      const response = await fetch(`${ApiURL}/auth/cadastro`, {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({nome, email, password})
+      })
 
-  // Função para atualizar o email
-  const autualizeEmail = (novoEmail : string) =>{
-    console.log(usuario)
-    setUsuario(
-        (prevUsuario) => ({
-        ...prevUsuario,
-        email: novoEmail
-        })
-    )
-  }
+      if (response){
+        const data : ResponseSignin = await response.json()
+        const {erro, mensagem, token = ''} = data;
+        console.log(data)
+        if (erro){
+          setErroLogin(mensagem)
+        } else {
+          setCookie(undefined, 'restaurant-token', token, {
+            maxAge: 60*60*1 // 1 hora
+          } )
+          router.push("/")
+        }
+      } else {
 
-  // Função para atualizar a senha
-  const autualizePassword = (novaPassword : string) =>{
-    console.log(usuario)
-    setUsuario(
-        (prevUsuario) => ({
-        ...prevUsuario,
-        password: novaPassword
-        })
-    )
+      }
+    }catch(error){
+    console.error('Erro na requisição', error)
+    }
+    
+    console.log('Nome', nome)
+    console.log('Email', email);
+    //console.log('Password', password);
   }
+  
+
 
   // Return com os inputs para nome, email, senha, e botão para página de login
   return(
@@ -57,16 +70,18 @@ export default function Cadastro() {
       <Header/>
     <div className={styles.container}>
         <div className={styles.login}>
-          <h1>Cadastro</h1>
-          <p className={styles.p}>Nome de usuário:</p>
-          <input className={styles.input} type="text" value={usuario.name} placeholder="Nome de usuário" onChange={(e) => autualizeNome(e.target.value)}/>
+          <form onSubmit={handleSubmit}>
+            <h1>Cadastro</h1>
+            <p className={styles.p}>Nome de usuário:</p>
+            <input className={styles.input} type="text" value={nome} placeholder="Nome de usuário" onChange={(e) => setNome(e.target.value)}/>
 
-          <p className={styles.p}>Email:</p>
-          <input className={styles.input} type="text" value={usuario.email} placeholder="Email" onChange={(e) => autualizeEmail(e.target.value)}/>
-          
-          <p className={styles.p}>Senha:</p>
-          <input className={styles.input} type="text" value={usuario.password} placeholder="Senha" onChange={(e) => autualizePassword(e.target.value)}/>
-          <button className={styles.botao} onClick={click}>Cadastre-se</button>
+            <p className={styles.p}>Email:</p>
+            <input className={styles.input} type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+            
+            <p className={styles.p}>Senha:</p>
+            <input className={styles.input} type="password" value={password} placeholder="Senha" onChange={(e) => setPassword(e.target.value)}/>
+            <button className={styles.botao} type="submit">Cadastre-se</button>
+          </form>
 
         </div>
     </div>
@@ -74,6 +89,5 @@ export default function Cadastro() {
   </div>
 
   );
-
 
 }
