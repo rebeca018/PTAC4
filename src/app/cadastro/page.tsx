@@ -72,13 +72,10 @@ export default function Cadastro() {
         <div className={styles.login}>
           <form onSubmit={handleSubmit}>
             <h1>Cadastro</h1>
-            <p className={styles.p}>Nome de usuário:</p>
             <input className={styles.input} type="text" value={nome} placeholder="Nome de usuário" onChange={(e) => setNome(e.target.value)}/>
 
-            <p className={styles.p}>Email:</p>
             <input className={styles.input} type="text" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
             
-            <p className={styles.p}>Senha:</p>
             <input className={styles.input} type="password" value={password} placeholder="Senha" onChange={(e) => setPassword(e.target.value)}/>
             <button className={styles.botao} type="submit">Cadastre-se</button>
           </form>

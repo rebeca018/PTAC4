@@ -28,7 +28,17 @@ export default function Home() {
       <Header/>
 
       <div className={styles.page}>
+      <div className={styles.flex}>
+          <a href="#">
+            <img
+              alt=""
+              src="./images/icone.png"  
+            />
+            </a>
+          </div>
+
         <h1 className={styles.title}>Home</h1>
+
 
           <div className={styles.main}>
             <button onClick={click} className={styles.botao}>Login</button>

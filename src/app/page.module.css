@@ -26,3 +26,21 @@
   background-color: #6A4E8E ;
   box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
 }
+
+.flex {
+  display: flex;
+  align-items: center;   
+  justify-content: center;
+  padding: 10px;
+}
+
+.flex img {
+  width: 1900px;  
+  height: 600px;  
+  object-fit: cover;  
+}
+
+
+
+
+
