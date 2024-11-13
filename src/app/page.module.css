@@ -1,14 +1,53 @@
+.fullscreen{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container{
+  display: flex;
+  height: 800px;
+  width: 100vw; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #937caf;
+  border: 5px solid;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px; 
+  height: 600px; 
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card_text{
+  font-size: 45px;
+}
+
+/*
 .page{
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Para alinhar o título e outros elementos em coluna */
+  flex-direction: column; 
   min-height: 100vh; 
   font-family: Arial, Helvetica, sans-serif;
 }
-
+*/
 .botao {
   background-color: #4B2E6D;
   color: white;

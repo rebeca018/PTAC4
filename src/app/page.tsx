@@ -1,6 +1,8 @@
 'use client'
 import styles from "./page.module.css";
 
+import Image from "next/image";
+
 import Header from "./componentes/header";
 import Footer from "./componentes/footer";
 
@@ -18,33 +20,28 @@ export default function Home() {
   useEffect(() => {
     const {'restaurant-token' : token} = parseCookies()
     if(!token){
-      router.push("/")
+      router.push("/login")
     }
     console.log(token)
   }, [])
   
   return(
-    <div >
+    <div className={styles.fullscreen}>
+    
       <Header/>
+      <div className={styles.container}>
 
-      <div className={styles.page}>
-      <div className={styles.flex}>
-          <a href="#">
-            <img
-              alt=""
-              src="./images/icone.png"  
-            />
-            </a>
-          </div>
-
-        <h1 className={styles.title}>Home</h1>
-
+        <div className={styles.card}>
+          <h1 className={styles.card_text}>Faça já a sua reserva!</h1>
+          <h2 className={styles.card_text}>O lugar ideal para fazer uma ótima refeição.</h2>
+        </div>
 
           <div className={styles.main}>
-            <button onClick={click} className={styles.botao}>Login</button>
+            
           </div>
-      </div>
+          </div>
       <Footer/>
+     
     </div>
 
   )
