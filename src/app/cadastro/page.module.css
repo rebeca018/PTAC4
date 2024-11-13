@@ -103,10 +103,11 @@
         margin-top: 20px;
       }
         
-      .autenticar h2 {
+      .cadastrar h2 {
         margin: 0;
         font-size: 18px;
       }
+
           
       @media (max-width: 400px) {
         .loginBox {

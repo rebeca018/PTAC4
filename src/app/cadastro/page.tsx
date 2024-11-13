@@ -22,7 +22,7 @@ export default function Cadastro() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [erroLogin, setErroLogin] = useState("");
+  const [erroCadastro, setErroCadastro] = useState("");
   const router = useRouter();
   
   const handleSubmit = async (e: FormEvent) => {
@@ -42,7 +42,7 @@ export default function Cadastro() {
         const {erro, mensagem, token = ''} = data;
         console.log(data)
         if (erro){
-          setErroLogin(mensagem)
+          setErroCadastro(mensagem)
         } else {
           setCookie(undefined, 'restaurant-token', token, {
             maxAge: 60*60*1 // 1 hora
@@ -78,6 +78,13 @@ export default function Cadastro() {
             
             <input className={styles.input} type="password" value={password} placeholder="Senha" onChange={(e) => setPassword(e.target.value)}/>
             <button className={styles.botao} type="submit">Cadastre-se</button>
+
+            {erroCadastro && (
+              <div className={styles.cadastrar}>
+                <h2>Não foi possível realizar o Login</h2>
+                <p>{erroCadastro}</p>
+              </div>
+            )}
           </form>
 
         </div>
