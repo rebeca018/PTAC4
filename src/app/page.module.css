@@ -23,7 +23,6 @@
   align-items: center;
   gap: 20px;
   background-color: #937caf;
-  border: 5px solid;
   border-radius: 10px;
   width: 100%;
   max-width: 1200px; 
@@ -34,6 +33,7 @@
 
 .card_text{
   font-size: 45px;
+  color: #fff;
 }
 
 /*
