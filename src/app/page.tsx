@@ -1,7 +1,6 @@
 'use client'
 import styles from "./page.module.css";
 
-import Image from "next/image";
 
 import Header from "./componentes/header";
 import Footer from "./componentes/footer";
@@ -36,10 +35,8 @@ export default function Home() {
           <h2 className={styles.card_text}>O lugar ideal para fazer uma ótima refeição.</h2>
         </div>
 
-          <div className={styles.main}>
-            
-          </div>
-          </div>
+
+      </div>
       <Footer/>
      
     </div>

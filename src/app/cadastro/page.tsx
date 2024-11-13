@@ -1,8 +1,10 @@
 'use client'
 
 import styles from "./page.module.css";
+
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+
 import Header from "../componentes/header";
 import Footer from "../componentes/footer";
 // Importando interface do usuário
@@ -81,7 +83,7 @@ export default function Cadastro() {
 
             {erroCadastro && (
               <div className={styles.cadastrar}>
-                <h2>Não foi possível realizar o Login</h2>
+                <h2>Não foi possível realizar o Cadastro</h2>
                 <p>{erroCadastro}</p>
               </div>
             )}
