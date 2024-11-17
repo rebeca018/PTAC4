@@ -30,10 +30,11 @@ export default function Home() {
       <Header/>
       <div className={styles.container}>
 
-        <div className={styles.card}>
-          <h1 className={styles.card_text}>Faça já a sua reserva!</h1>
-          <h2 className={styles.card_text}>O lugar ideal para fazer uma ótima refeição.</h2>
+        <div className={styles.imageContainer}>
+          {/* Caminho correto para a imagem dentro da pasta public */}
+          <img src="/images/icon4.png" alt="Imagem" className={styles.image} />
         </div>
+        
 
 
       </div>
