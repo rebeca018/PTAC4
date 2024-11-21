@@ -28,16 +28,16 @@ export default function Home() {
     <div className={styles.fullscreen}>
     
       <Header/>
+      
       <div className={styles.container}>
 
         <div className={styles.imageContainer}>
           {/* Caminho correto para a imagem dentro da pasta public */}
           <img src="/images/icon4.png" alt="Imagem" className={styles.image} />
         </div>
-        
-
 
       </div>
+
       <Footer/>
      
     </div>
