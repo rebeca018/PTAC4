@@ -3,7 +3,6 @@ import styles from "./page.module.css";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import Header from "../componentes/header";
 import Footer from "../componentes/footer";
 
@@ -19,7 +18,32 @@ export default function Reservas() {
     <div>
       <Header/>
       <div className={styles.container}>
-        <div className={styles.login}>
+
+      <div className={styles.tablesContainer}>
+        <div className={styles.tables}>
+          <h1>Selecione uma Mesa</h1>
+          <div className={styles.table} id="mesa-1">
+            1
+          </div>
+          <div className={styles.table} id="mesa-2">
+            2
+          </div>
+          <div className={styles.table} id="mesa-3">
+            3
+          </div>
+          <div className={styles.table} id="mesa-4">
+            4
+          </div>
+          <div className={styles.table} id="mesa-5">
+            5
+          </div>
+          <div className={styles.table} id="mesa-6">
+            6
+          </div>
+        </div>
+      </div>
+
+        <div className={styles.reservas}>
           <form>
           <h1>Reservas</h1>
           <input className={styles.input} type="text" value={usuario} placeholder="Usuário" onChange={(e) => setUsuario(e.target.value)}/>
@@ -38,7 +62,8 @@ export default function Reservas() {
           </form>
           
         </div>
-    </div>
+      </div>
+      
       <Footer/>
     </div>
   )
