@@ -31,8 +31,8 @@ export default function Home() {
       
       <div className={styles.container}>
 
-        <div className={styles.imageContainer}>
-          <img src="/images/icon4.png" alt="Imagem" className={styles.image} />
+        <div className={styles.card}>
+         <img src="/images/icon4.png" alt="Imagem" className={styles.image} />
         </div>
 
       </div>
@@ -45,6 +45,9 @@ export default function Home() {
 }
 
 /*
+        <div className={styles.imageContainer}>
+          <img src="/images/icon4.png" alt="Imagem" className={styles.image} />
+        </div>
   if(user){
     return (
       <div className={styles.page}>
