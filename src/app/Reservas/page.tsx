@@ -3,8 +3,11 @@ import styles from "./page.module.css";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 import Header from "../componentes/header";
 import Footer from "../componentes/footer";
+import { parseCookies } from "nookies";
 
 const reservas = [
   {
@@ -71,8 +74,8 @@ export default function Reservas() {
           <form className={styles.form}>
           <h1>Reservas</h1>
           <input className={styles.input} type="text" value={usuario} placeholder="Usuário" onChange={(e) => setUsuario(e.target.value)}/>
-          <input className={styles.input} type="text" value={selectedTable} placeholder="Mesa" onChange={(e) => setReserva(selectedTable)}/>
-          <input className={styles.input} type="text" value={data} placeholder="Data" onChange={(e) => setData(e.target.value)}/>
+          <input className={styles.input} type="text" value={"Mesa: " + selectedTable} placeholder="Mesa" onChange={(e) => setReserva(selectedTable)}/>
+          <input className={styles.input} type="date" value={data} placeholder="Data" onChange={(e) => setData(e.target.value)}/>
           <input className={styles.input} type="text" value={nPessoas} placeholder="Número de Pessoas" onChange={(e) => setNPessoas(e.target.value)}/>
           <button className={styles.botao} type="submit">Reservar</button>
           
