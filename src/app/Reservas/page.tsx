@@ -1,15 +1,18 @@
 'use client'
 import styles from "./page.module.css";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 import Header from "../componentes/header";
 import Footer from "../componentes/footer";
 import { parseCookies } from "nookies";
+import { ApiURL } from "../config";
 import reserva from "../interfaces/reserva";
 import mesa from "../interfaces/mesa";
+import Reserva from "../interfaces/reserva";
+import { table } from "console";
 
 
 export default function Reservas() {
@@ -20,19 +23,37 @@ export default function Reservas() {
   const [data, setData] = useState("");
   const [nPessoas, setNPessoas] = useState("");
   const [erroReserva, setErroReserva] = useState("");
-  const [selectedTable, setSelectedTable] = useState("");
+  const [selectedTable, setSelectedTable] = useState(0);
+  const [fromReserva, setFormReserva]= useState<Reserva>({
+    id: 0,
+    usuario_id: 0,
+    mesa_id: 0,
+    data: "",
+    n_pessoas: 0,
+    status: true
+  })
+
+  function alterFormReserva<K extends keyof Reserva>(key:K, value: Reserva[K] ){
+    console.log(key, value)
+    setFormReserva( (prevForm) => ({
+      ...prevForm,
+      [key] : value
+    }))
+  }
 
   useEffect(() => {
 
     async function fetchData() {
 
       try {
-        const response = await fetch('http://localhost:3333/reservas');
-        const data = await response.json()
+        const responseReservas = await fetch('http://localhost:3333/reservas');
+        const responseMesas = await fetch('http://localhost:3333/mesas');
+        const dataReservas = await responseReservas.json()
+        const dataMesas = await responseMesas.json()
 
-        setMesas(data.mesas)
-        setReservas(data.reservas)
-        console.log(data.mesas)
+        setMesas(dataMesas)
+        setReservas(dataReservas)
+        //console.log(data.mesas)
 
       } catch (error) {
         console.error("Erro ao carregar os dados:", error);
@@ -44,9 +65,18 @@ export default function Reservas() {
   }, [])
 
 
-  const selectTable = (mesa: string) => {
-    setSelectedTable(mesa);
+  const selectTable = (mesaId: number) => {
+    setSelectedTable(mesaId);
+    alterFormReserva("mesa_id", mesaId);
   };
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    await fetch('http://localhost:3333/reservas', {
+      method: 'POST',
+      body: JSON.stringify(fromReserva)
+    })
+  }
 
   return(
     <div>
@@ -70,7 +100,9 @@ export default function Reservas() {
                   <div
                     key={index}
                     className={styles.mesa}
-                    onClick={() => selectTable(mesa.id.toString())}
+                    onClick={() => {
+                      alterFormReserva("mesa_id", mesa.id)
+                      selectTable(mesa.id) }}
                   >
                     {mesa.codigo}
                   </div>
@@ -82,12 +114,12 @@ export default function Reservas() {
 
             
         <div className={styles.reservas}>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
           <h1>Reservas</h1>
-          <input className={styles.input} type="text" value={usuario} placeholder="Usuário" onChange={(e) => setUsuario(e.target.value)}/>
+          <input className={styles.input} type="number" value={fromReserva.usuario_id} placeholder="Usuário" onChange={(e) => alterFormReserva("usuario_id", parseInt(e.target.value))}/>
           <input className={styles.input} type="text" value={"Mesa: " + selectedTable} placeholder="Mesa" readOnly/>
-          <input className={styles.input} type="date" value={data} placeholder="Data" onChange={(e) => setData(e.target.value)}/>
-          <input className={styles.input} type="text" value={nPessoas} placeholder="Número de Pessoas" onChange={(e) => setNPessoas(e.target.value)}/>
+          <input className={styles.input} type="date" value={fromReserva.data} placeholder="Data" onChange={((e) => alterFormReserva("data", e.target.value))}/>
+          <input className={styles.input} type="number" value={fromReserva.n_pessoas} placeholder="Número de Pessoas" onChange={(e) => alterFormReserva("n_pessoas", parseInt(e.target.value))}/>
           <button className={styles.botao} type="submit">Reservar</button>
           
             {erroReserva && (

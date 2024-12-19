@@ -1,0 +1,224 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+}
+  
+.h1 {
+  margin-bottom: 20px;     
+  font-size: 24px;         
+  text-align: center;   
+  color: #6a4e8e;  
+}
+
+.mesas {
+  display: flex;          
+  flex-wrap: wrap;        
+  gap: 10px;              
+  justify-content: center; 
+}
+
+.mesa {
+  width: 60px;             
+  height: 60px;            
+  background-color: #6a4e8e; 
+  color: #fff;
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+  border-radius: 5px;      
+  font-size: 20px;        
+  text-align: center;      
+}
+  
+.mesa:hover {
+  background-color: #9570c5;
+}
+  
+.mesa.selected {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.mesaR {
+  width: 60px;             
+  height: 60px;            
+  background-color: #ccc; 
+  color: #fff;
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+  border-radius: 5px;      
+  font-size: 20px;        
+  text-align: center;      
+}
+  
+  
+
+.reservas {
+  display: flex;            
+  justify-content: center; 
+  align-items: center;      
+  height: 100vh; 
+  width: 1000px;
+  padding: 20px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+            
+.reservas h1 {
+  color: #4B2E6D;
+  font-size: 28px;
+    margin-bottom: 20px;
+}
+            
+.input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ae92a3;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+            
+.input:focus {
+  border-color: #4B2E6D;
+  box-shadow: 0 0 8px rgba(106, 27, 154, 0.2);
+}
+            
+.botao {
+  background-color: #4B2E6D;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  width: 100%;
+}
+            
+.botao:hover {
+  background-color: #6A4E8E ;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+}
+  
+.botaoC {
+  background-color: #FFF;
+  color: #4B2E6D;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  width: 100%;
+}
+            
+            
+.autenticar {
+  background-color: #D4C1D4 ;
+  border: 1px solid #4E0F2B ;
+  color: #4E0F2B ;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+          
+.autenticar h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    align-items: center;    
+  }
+
+  .mesasContainer {
+    width: 90%;
+    margin-bottom: 20px; 
+  }
+
+  .reservas {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .mesas {
+    flex-direction: row; /* Alinha as mesas lado a lado */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mesa {
+    width: 50px; 
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .mesaR {
+    width: 50px; 
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .form {
+    max-width: 100%; 
+    padding: 20px; 
+  }
+
+  .input {
+    font-size: 14px; 
+  }
+
+  .botao {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .h1 {
+    font-size: 20px; 
+  }
+
+  .mesa {
+    width: 40px; 
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .mesaR {
+    width: 40px; 
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .form {
+    padding: 15px; 
+  }
+
+  .input, .botao {
+    font-size: 12px; 
+  }
+}

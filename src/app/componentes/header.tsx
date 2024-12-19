@@ -17,6 +17,11 @@ const Header: React.FC = () => {
   const clickR = () => {
     router.push('/Reservas');
   }
+
+  const clickM = () => {
+    router.push('/Mesas');
+  }
+
    
     return <header className={styles.header}>
         <nav className={styles.nav}>
@@ -34,6 +39,7 @@ const Header: React.FC = () => {
             <div className={styles.e}>
             <button onClick={clickH} className={styles.botaoH}>Home</button>
             <button onClick={clickR} className={styles.botaoH}>Reservas</button>
+            <button onClick={clickM} className={styles.botaoH}>Cadastro de Mesas</button>
             </div>
 
             <div className={styles.d}>

@@ -1,125 +1,186 @@
 {
-    "reservas": {
-        "mesas": [
-            {
-                "id": 1,
-                "codigo": "1",
-                "n_lugares": 4
-            },
-            {
-                "id": 2,
-                "codigo": "2",
-                "n_lugares": 4
-            },
-            {
-                "id": 3,
-                "codigo": "3",
-                "n_lugares": 4
-            },
-            {
-                "id": 4,
-                "codigo": "4",
-                "n_lugares": 4
-            },
-            {
-                "id": 5,
-                "codigo": "5",
-                "n_lugares": 4
-            },
-            {
-                "id": 6,
-                "codigo": "6",
-                "n_lugares": 4
-            },
-            {
-                "id": 7,
-                "codigo": "7",
-                "n_lugares": 4
-            },
-            {
-                "id": 8,
-                "codigo": "8",
-                "n_lugares": 4
-            },
-            {
-                "id": 9,
-                "codigo": "9",
-                "n_lugares": 4
-            },
-            {
-                "id": 10,
-                "codigo": "10",
-                "n_lugares": 4
-            },
-            {
-                "id": 11,
-                "codigo": "11",
-                "n_lugares": 4
-            },
-            {
-                "id": 12,
-                "codigo": "12",
-                "n_lugares": 4
-            },
-            {
-                "id": 13,
-                "codigo": "13",
-                "n_lugares": 4
-            },
-            {
-                "id": 14,
-                "codigo": "14",
-                "n_lugares": 4
-            },
-            {
-                "id": 15,
-                "codigo": "15",
-                "n_lugares": 4
-            },
-            {
-                "id": 16,
-                "codigo": "16",
-                "n_lugares": 4
-            },
-            {
-                "id": 17,
-                "codigo": "17",
-                "n_lugares": 4
-            },
-            {
-                "id": 18,
-                "codigo": "18",
-                "n_lugares": 4
-            },
-            {
-                "id": 19,
-                "codigo": "19",
-                "n_lugares": 4
-            },
-            {
-                "id": 20,
-                "codigo": "20",
-                "n_lugares": 4
-            }
-        ],
-        "reservas": [
-            {
-                "id": 1,
-                "usuario_id": 1,
-                "mesa_id": 1,
-                "data": "2024-05-28",
-                "n_pessoas": 4,
-                "status": true
-
-            },
-            {
-                "id": 2,
-                "usuario_id": 2,
-                "mesa_id": 2,
-                "data": "2024-05-27",
-                "n_pessoas": 4,
-                "status": false
-            }
-        ]
+  "mesas": [
+    {
+      "id": "1",
+      "codigo": "1",
+      "n_lugares": 4
+    },
+    {
+      "id": "2",
+      "codigo": "2",
+      "n_lugares": 4
+    },
+    {
+      "id": "3",
+      "codigo": "3",
+      "n_lugares": 4
+    },
+    {
+      "id": "4",
+      "codigo": "4",
+      "n_lugares": 4
+    },
+    {
+      "id": "5",
+      "codigo": "5",
+      "n_lugares": 4
+    },
+    {
+      "id": "6",
+      "codigo": "6",
+      "n_lugares": 4
+    },
+    {
+      "id": "7",
+      "codigo": "7",
+      "n_lugares": 4
+    },
+    {
+      "id": "8",
+      "codigo": "8",
+      "n_lugares": 4
+    },
+    {
+      "id": "9",
+      "codigo": "9",
+      "n_lugares": 4
+    },
+    {
+      "id": "10",
+      "codigo": "10",
+      "n_lugares": 4
+    },
+    {
+      "id": "11",
+      "codigo": "11",
+      "n_lugares": 4
+    },
+    {
+      "id": "12",
+      "codigo": "12",
+      "n_lugares": 4
+    },
+    {
+      "id": "13",
+      "codigo": "13",
+      "n_lugares": 4
+    },
+    {
+      "id": "14",
+      "codigo": "14",
+      "n_lugares": 4
+    },
+    {
+      "id": "15",
+      "codigo": "15",
+      "n_lugares": 4
+    },
+    {
+      "id": "16",
+      "codigo": "16",
+      "n_lugares": 4
+    },
+    {
+      "id": "17",
+      "codigo": "17",
+      "n_lugares": 4
+    },
+    {
+      "id": "18",
+      "codigo": "18",
+      "n_lugares": 4
+    },
+    {
+      "id": "19",
+      "codigo": "19",
+      "n_lugares": 4
+    },
+    {
+      "id": "20",
+      "codigo": "20",
+      "n_lugares": 4
     }
+  ],
+  "reservas": [
+    {
+      "id": "1",
+      "usuario_id": 1,
+      "mesa_id": 1,
+      "data": "2024-05-28",
+      "n_pessoas": 4,
+      "status": true
+    },
+    {
+      "id": "2",
+      "usuario_id": 2,
+      "mesa_id": 2,
+      "data": "2024-05-27",
+      "n_pessoas": 4,
+      "status": false
+    },
+    {
+      "id": 0,
+      "usuario_id": 4,
+      "mesa_id": 17,
+      "data": "2024-12-19",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 4,
+      "mesa_id": 17,
+      "data": "2024-12-19",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 4,
+      "mesa_id": 17,
+      "data": "2024-12-19",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 2,
+      "mesa_id": "18",
+      "data": "2024-12-28",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 2,
+      "mesa_id": "18",
+      "data": "2024-12-28",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 2,
+      "mesa_id": "18",
+      "data": "2024-12-28",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 2,
+      "mesa_id": "18",
+      "data": "2024-12-28",
+      "n_pessoas": 2,
+      "status": true
+    },
+    {
+      "id": 0,
+      "usuario_id": 2,
+      "mesa_id": "18",
+      "data": "2024-12-28",
+      "n_pessoas": 2,
+      "status": true
+    }
+  ]
 }
